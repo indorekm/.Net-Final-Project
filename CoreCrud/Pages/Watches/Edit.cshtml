@@ -1,0 +1,67 @@
+@page
+@model CoreCrud.Pages.Watches.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Watch</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Watch.Id" />
+            <div class="form-group">
+                <label asp-for="Watch.Brand" class="control-label"></label>
+                <input asp-for="Watch.Brand" class="form-control" />
+                <span asp-validation-for="Watch.Brand" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Watch.LaunchDate" class="control-label"></label>
+                <input asp-for="Watch.LaunchDate" class="form-control" />
+                <span asp-validation-for="Watch.LaunchDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Watch.IsAnalog" /> @Html.DisplayNameFor(model => model.Watch.IsAnalog)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Watch.Price" class="control-label"></label>
+                <input asp-for="Watch.Price" class="form-control" />
+                <span asp-validation-for="Watch.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Watch.Material" class="control-label"></label>
+                <input asp-for="Watch.Material" class="form-control" />
+                <span asp-validation-for="Watch.Material" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Watch.Quantity" class="control-label"></label>
+                <input asp-for="Watch.Quantity" class="form-control" />
+                <span asp-validation-for="Watch.Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Watch.ManufacturerId" class="control-label"></label>
+                <select asp-for="Watch.ManufacturerId" class="form-control" asp-items="ViewBag.ManufacturerId"></select>
+                <span asp-validation-for="Watch.ManufacturerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

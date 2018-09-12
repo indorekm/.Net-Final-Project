@@ -1,0 +1,61 @@
+@page
+@model CoreCrud.Pages.Watches.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Watch</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Watch.Brand)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Watch.Brand)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Watch.LaunchDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Watch.LaunchDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Watch.IsAnalog)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Watch.IsAnalog)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Watch.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Watch.Price)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Watch.Material)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Watch.Material)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Watch.Quantity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Watch.Quantity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Watch.Manufacturer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Watch.Manufacturer.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Watch.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
