@@ -29,14 +29,14 @@ namespace CoreCrud.Pages.Watches
                 return NotFound();
             }
 
-            Watch = await _context.Watch
+            Watch = await _context.WatchContext
                 .Include(w => w.Manufacturer).FirstOrDefaultAsync(m => m.Id == id);
 
             if (Watch == null)
             {
                 return NotFound();
             }
-           ViewData["ManufacturerId"] = new SelectList(_context.Manufacturer, "Id", "Id");
+           ViewData["ManufacturerId"] = new SelectList(_context.ManufacturerContext, "Id", "Id");
             return Page();
         }
 
@@ -70,7 +70,7 @@ namespace CoreCrud.Pages.Watches
 
         private bool WatchExists(int id)
         {
-            return _context.Watch.Any(e => e.Id == id);
+            return _context.WatchContext.Any(e => e.Id == id);
         }
     }
 }

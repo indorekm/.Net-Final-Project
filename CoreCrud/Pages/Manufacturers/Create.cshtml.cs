@@ -33,7 +33,7 @@ namespace CoreCrud.Pages.Manufacturers
                 return Page();
             }
 
-            _context.Manufacturer.Add(Manufacturer);
+            _context.ManufacturerContext.Add(Manufacturer);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

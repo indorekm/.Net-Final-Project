@@ -27,7 +27,7 @@ namespace CoreCrud.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Manufacturer");
+                    b.ToTable("ManufacturerContext");
                 });
 
             modelBuilder.Entity("CoreCrud.Models.Watch", b =>
@@ -53,7 +53,7 @@ namespace CoreCrud.Migrations
 
                     b.HasIndex("ManufacturerId");
 
-                    b.ToTable("Watch");
+                    b.ToTable("WatchContext");
                 });
 
             modelBuilder.Entity("CoreCrud.Models.Watch", b =>

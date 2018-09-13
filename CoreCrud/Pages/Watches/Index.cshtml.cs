@@ -22,7 +22,7 @@ namespace CoreCrud.Pages.Watches
 
         public async Task OnGetAsync()
         {
-            Watch = await _context.Watch
+            Watch = await _context.WatchContext
                 .Include(w => w.Manufacturer).ToListAsync();
         }
     }

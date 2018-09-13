@@ -27,7 +27,7 @@ namespace CoreCrud.Pages.Watches
                 return NotFound();
             }
 
-            Watch = await _context.Watch
+            Watch = await _context.WatchContext
                 .Include(w => w.Manufacturer).FirstOrDefaultAsync(m => m.Id == id);
 
             if (Watch == null)

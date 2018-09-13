@@ -8,7 +8,7 @@ namespace CoreCrud.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Manufacturer",
+                name: "ManufacturerContext",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -18,11 +18,11 @@ namespace CoreCrud.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Manufacturer", x => x.Id);
+                    table.PrimaryKey("PK_ManufacturerContext", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Watch",
+                name: "WatchContext",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -37,28 +37,28 @@ namespace CoreCrud.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Watch", x => x.Id);
+                    table.PrimaryKey("PK_WatchContext", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Watch_Manufacturer_ManufacturerId",
+                        name: "FK_WatchContext_ManufacturerContext_ManufacturerId",
                         column: x => x.ManufacturerId,
-                        principalTable: "Manufacturer",
+                        principalTable: "ManufacturerContext",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Watch_ManufacturerId",
-                table: "Watch",
+                name: "IX_WatchContext_ManufacturerId",
+                table: "WatchContext",
                 column: "ManufacturerId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Watch");
+                name: "WatchContext");
 
             migrationBuilder.DropTable(
-                name: "Manufacturer");
+                name: "ManufacturerContext");
         }
     }
 }

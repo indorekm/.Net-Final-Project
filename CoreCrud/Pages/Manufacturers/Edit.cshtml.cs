@@ -29,7 +29,7 @@ namespace CoreCrud.Pages.Manufacturers
                 return NotFound();
             }
 
-            Manufacturer = await _context.Manufacturer.FirstOrDefaultAsync(m => m.Id == id);
+            Manufacturer = await _context.ManufacturerContext.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Manufacturer == null)
             {
@@ -68,7 +68,7 @@ namespace CoreCrud.Pages.Manufacturers
 
         private bool ManufacturerExists(int id)
         {
-            return _context.Manufacturer.Any(e => e.Id == id);
+            return _context.ManufacturerContext.Any(e => e.Id == id);
         }
     }
 }

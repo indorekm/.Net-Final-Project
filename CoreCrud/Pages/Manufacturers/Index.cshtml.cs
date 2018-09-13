@@ -22,7 +22,7 @@ namespace CoreCrud.Pages.Manufacturers
 
         public async Task OnGetAsync()
         {
-            Manufacturer = await _context.Manufacturer.ToListAsync();
+            Manufacturer = await _context.ManufacturerContext.ToListAsync();
         }
     }
 }

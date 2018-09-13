@@ -20,7 +20,7 @@ namespace CoreCrud.Pages.Watches
 
         public IActionResult OnGet()
         {
-        ViewData["ManufacturerId"] = new SelectList(_context.Manufacturer, "Id", "Id");
+        ViewData["ManufacturerId"] = new SelectList(_context.ManufacturerContext, "Id", "Id");
             return Page();
         }
 
@@ -34,7 +34,7 @@ namespace CoreCrud.Pages.Watches
                 return Page();
             }
 
-            _context.Watch.Add(Watch);
+            _context.WatchContext.Add(Watch);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

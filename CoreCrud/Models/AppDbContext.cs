@@ -10,9 +10,9 @@ namespace CoreCrud.Models
         {
         }
 
-        public DbSet<Watch> Watch { get; set; }
+        public DbSet<Watch> WatchContext { get; set; }
 
-        public DbSet<Manufacturer> Manufacturer { get; set; }
+        public DbSet<Manufacturer> ManufacturerContext { get; set; }
 
     }
 }

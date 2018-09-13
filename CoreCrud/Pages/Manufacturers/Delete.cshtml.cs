@@ -28,7 +28,7 @@ namespace CoreCrud.Pages.Manufacturers
                 return NotFound();
             }
 
-            Manufacturer = await _context.Manufacturer.FirstOrDefaultAsync(m => m.Id == id);
+            Manufacturer = await _context.ManufacturerContext.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Manufacturer == null)
             {
@@ -44,11 +44,11 @@ namespace CoreCrud.Pages.Manufacturers
                 return NotFound();
             }
 
-            Manufacturer = await _context.Manufacturer.FindAsync(id);
+            Manufacturer = await _context.ManufacturerContext.FindAsync(id);
 
             if (Manufacturer != null)
             {
-                _context.Manufacturer.Remove(Manufacturer);
+                _context.ManufacturerContext.Remove(Manufacturer);
                 await _context.SaveChangesAsync();
             }
 

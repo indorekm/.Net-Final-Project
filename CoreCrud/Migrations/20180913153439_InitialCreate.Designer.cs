@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CoreCrud.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20180912211744_InitialCreate")]
+    [Migration("20180913153439_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,7 +29,7 @@ namespace CoreCrud.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Manufacturer");
+                    b.ToTable("ManufacturerContext");
                 });
 
             modelBuilder.Entity("CoreCrud.Models.Watch", b =>
@@ -55,7 +55,7 @@ namespace CoreCrud.Migrations
 
                     b.HasIndex("ManufacturerId");
 
-                    b.ToTable("Watch");
+                    b.ToTable("WatchContext");
                 });
 
             modelBuilder.Entity("CoreCrud.Models.Watch", b =>
