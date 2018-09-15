@@ -36,7 +36,7 @@ namespace CoreCrud.Pages.Watches
             {
                 return NotFound();
             }
-           ViewData["ManufacturerId"] = new SelectList(_context.ManufacturerContext, "Id", "Id");
+           ViewData["ManufacturerId"] = new SelectList(_context.ManufacturerContext, "Id", "Name");
             return Page();
         }
 

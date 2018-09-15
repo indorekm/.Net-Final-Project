@@ -20,7 +20,7 @@ namespace CoreCrud.Pages.Watches
 
         public IActionResult OnGet()
         {
-        ViewData["ManufacturerId"] = new SelectList(_context.ManufacturerContext, "Id", "Id");
+        ViewData["ManufacturerId"] = new SelectList(_context.ManufacturerContext, "Id", "Name");
             return Page();
         }
 
