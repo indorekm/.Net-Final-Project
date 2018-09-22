@@ -15,44 +15,53 @@ namespace CoreCrud.Models
                 // GATTUSMP: SAMPLE OF A SEED FILE THAT FIRST LOOKS FOR A DATABASE WITH DATA
                 //           IF NO DATA FOUND THEN DATA IS ADDED TO THE DATABASE
                 // // Look for any movies.
-                // if (context.Movie.Any())
-                // {
-                //     return;   // DB has been seeded
-                // }
+                if (context.WatchContext.Any())
+                {
+                    return;   // DB has been seeded
+                }
 
-                // context.Movie.AddRange(
-                //     new Movie
-                //     {
-                //         Title = "When Harry Met Sally",
-                //         ReleaseDate = DateTime.Parse("1989-2-12"),
-                //         Genre = "Romantic Comedy",
-                //         Price = 7.99M
-                //     },
+                context.WatchContext.AddRange(
+                    new Watch
+                    {
+                        Brand = "Abc",
+                        LaunchDate = DateTime.Parse("200-2-12"),
+                        IsAnalog = false,
+                        Price = 75100.99M,
+                        Material = "Leather" ,
+                        Quantity = 5
 
-                //     new Movie
-                //     {
-                //         Title = "Ghostbusters",
-                //         ReleaseDate = DateTime.Parse("1984-3-13"),
-                //         Genre = "Comedy",
-                //         Price = 8.99M
-                //     },
+                    },
 
-                //     new Movie
-                //     {
-                //         Title = "Ghostbusters 2",
-                //         ReleaseDate = DateTime.Parse("1986-2-23"),
-                //         Genre = "Comedy",
-                //         Price = 9.99M
-                //     },
+                    new Watch
+                    {
+                        Brand = "Fossil",
+                        LaunchDate = DateTime.Parse("1900-2-12"),
+                        IsAnalog = false,
+                        Price = 80000.99M,
+                        Material = "Steel" ,
+                        Quantity = 5
+                    },
 
-                //     new Movie
-                //     {
-                //         Title = "Rio Bravo",
-                //         ReleaseDate = DateTime.Parse("1959-4-15"),
-                //         Genre = "Western",
-                //         Price = 3.99M
-                //     }
-                // );
+                    new Watch
+                    {
+                        Brand = "Titan",
+                        LaunchDate = DateTime.Parse("1950-2-09"),
+                        IsAnalog = true,
+                        Price = 5000.99M,
+                        Material = "Leather" ,
+                        Quantity = 15
+                    },
+
+                    new Watch
+                    {
+                        Brand = "Police",
+                        LaunchDate = DateTime.Parse("2000-2-12"),
+                        IsAnalog = false,
+                        Price = 6000.99M,
+                        Material = "steel" ,
+                        Quantity = 30
+                    }
+                );
                 context.SaveChanges();
             }
         }

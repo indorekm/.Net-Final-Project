@@ -1,0 +1,42 @@
+﻿@page
+@model AuctionModel
+@{
+ ViewData["title"] = "Auction's Page";   
+}
+
+<h1>Welcome to the Auction!!!</h1>
+<p>Following is the list of all the Watched available for auction at our Website</p>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Brand</th>
+            <th>LaunchDate</th>
+            <th>IsAnalog</th>
+            <th>Price</th>
+            <th>Material</th>
+            <th>Quantity</th>
+            <th>Price Range</th>
+            <th>Manufacturer</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var code in Model.Watches) {
+            <tr>
+                <td class="text-right">#@code.Id</td>
+                <td>@code.Brand</td>
+                <td>@code.LaunchDate</td>
+                @if(@code.IsAnalog == true){
+                    <td>Yes</td>
+                }else{
+                    <td>No</td>
+                }
+                <td>$@code.Price</td>
+                <td>@code.Material</td>
+                <td>@code.Quantity</td>
+                <td>@code.PriceRange</td>
+                <td>@code.Manufacturer.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
