@@ -44,6 +44,7 @@ namespace CoreCrud.Pages.Watches
         {
             if (!ModelState.IsValid)
             {
+                ViewData["ManufacturerId"] = new SelectList(_context.ManufacturerContext, "Id", "Name");
                 return Page();
             }
 
