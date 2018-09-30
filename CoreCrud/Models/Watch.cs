@@ -26,9 +26,10 @@ namespace CoreCrud.Models
 
         [Display(Name = "Is Analog")]
         public bool IsAnalog { get; set; }
+
         [Required]
         [Range(100, 999999, ErrorMessage = "Price must be between 100 and 20000")]
-
+        [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "Please enter valid positive price" )]
         [Display(Name = "Price")]
         public decimal Price { get; set; }
 
